@@ -1,0 +1,5 @@
+jedi
+flake8
+black
+-r requirements.txt
+
