@@ -1,0 +1,29 @@
+version: "3.7"
+services:
+  ncfd:
+    build: .
+    image: nextcloud-filedrop:latest
+    expose:
+      - 3000
+    restart: always
+    environment:
+      - NCFD_NEXTCLOUD_USER=
+      - NCFD_NEXTCLOUD_PASS=
+      - NCFD_NEXTCLOUD_WEBDAV_URL=https://yourdomain.com/remote.php/webdav/
+      - NCFD_INBOX_DIR=/inbox
+      - DEBUG=0
+      - NCFD_ROUTES=filedrop1@yourdomain.com:/INBOX1,filedrop2@yourdomain.com:/INBOX2,
+  imap-to-http:
+    build: ../py-imap-to-http
+    image: py-imap-to-http:latest
+    environment:
+      - IMAP_SERVER=
+      - IMAP_USER=
+      - IMAP_PASSWORD=
+      - IMAP_CHECK_FOLDER=Inbox
+      - IMAP_SUCCESS_FOLDER=Trash
+      - IMAP_ERROR_FOLDER=Errors
+      - IMAP_POST_TO_URL=http://ncfd:3000
+    restart: always
+    depends_on:
+      - ncfd

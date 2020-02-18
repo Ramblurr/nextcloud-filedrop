@@ -18,10 +18,18 @@ This service supports two incoming email sources:
 
 ## Get Going
 
+Easiest way to get going is using docker.
+
+1. Go fetch my fork of [py-imap-to-http](https://github.com/Ramblurr/py-imap-to-http)
+2. Copy `docker-compose.sample.yml` to `docker-compose.yml`
+3. Edit the `build: ../py-imap-to-http` line in the imap service to the location of the dir from step 1
+4. Fill in your env vars.
+5. `docker-compose up`
+
+##  Development
+
 This project requires Python 3, and the python deps in `requirements.txt`. Using
 a virtualenv is recommended.
-
-### Setup 
 
 ```
 cp env-sample .env
