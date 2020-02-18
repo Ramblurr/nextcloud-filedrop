@@ -3,7 +3,7 @@ from datetime import datetime
 
 from webdav3.client import Client
 
-from mgnc import settings
+from ncfd import settings
 
 
 def load_opts_from_env():
@@ -24,15 +24,13 @@ def new_client(options=None):
 
 def build_remote_path(inbox_dir, file_name):
     if inbox_dir is None:
-        raise Exception("MGNC_INBOX_DIR must be set to a dir that exists in Nextcloud.")
+        raise Exception("NCFD_INBOX_DIR must be set to a dir that exists in Nextcloud.")
     sanitized_name = os.path.basename(file_name)
-    print(file_name, sanitized_name)
     if sanitized_name != file_name:
         raise Exception(
             "Possible directory traversal detected with filename: {}".format(file_name)
         )
     full_path = "{}/{}".format(inbox_dir, sanitized_name)
-    print(full_path, os.path.abspath(full_path))
     if os.path.abspath(full_path) != full_path or not full_path.startswith(inbox_dir):
         raise Exception(
             "Possible directory traversal detected with filename: {}".format(file_name)
@@ -67,6 +65,7 @@ def put_file(route, file_name, contents):
     inbox_path = route["remote_path"]
     remote_path = remote_path_for(client, inbox_path, file_name)
     client.upload_to(buff=contents, remote_path=remote_path)
+    return True
 
 
 if __name__ == "__main__":

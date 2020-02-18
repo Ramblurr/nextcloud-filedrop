@@ -2,7 +2,7 @@ import os
 from setuptools import setup, find_packages
 
 setup(
-    name="mailgun-nextcloud",
+    name="nextcloud-filedrop",
     description="Save attachments from emails to Nextcloud",
     long_description=open("README.md").read(),
     url="",
@@ -13,6 +13,6 @@ setup(
     install_requires=open(
         os.path.join(os.path.dirname(__file__), "requirements.txt")
     ).readlines(),
-    entry_points={"console_scripts": ["mailgun-nextcloud = mgnc.__main__:main"]},
+    entry_points={"console_scripts": ["ncfd  = ncfd.__main__:main"]},
     license="AGPL3",
 )

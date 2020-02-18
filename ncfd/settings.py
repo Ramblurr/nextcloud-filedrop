@@ -11,7 +11,7 @@ def get_env(key, default=None):
 
 def parse_routes(route_defs):
     if route_defs is None or len(route_defs) == 0:
-        raise Exception("env var MGNC_ROUTES must be defined. See README.md")
+        raise Exception("env var NCFD_ROUTES must be defined. See README.md")
     pairs = route_defs.split(",")
     routes = []
     for p in pairs:
@@ -22,13 +22,13 @@ def parse_routes(route_defs):
     return routes
 
 
-NEXTCLOUD_WEBDAV_URL = get_env("MGNC_NEXTCLOUD_WEBDAV_URL")
-NEXTCLOUD_USER = get_env("MGNC_NEXTCLOUD_USER")
-NEXTCLOUD_PASS = get_env("MGNC_NEXTCLOUD_PASS")
+NEXTCLOUD_WEBDAV_URL = get_env("NCFD_NEXTCLOUD_WEBDAV_URL")
+NEXTCLOUD_USER = get_env("NCFD_NEXTCLOUD_USER")
+NEXTCLOUD_PASS = get_env("NCFD_NEXTCLOUD_PASS")
 DEBUG = get_env("DEBUG", "false").lower() in ["1", "true", "yes"]
-INBOX_DIR = get_env("MGNC_INBOX_DIR")
-MAX_ATTACHMENT_BYTES = int(get_env("MGNC_MAX_ATTACHMENT_BYTES", 25 * 1024 * 1024))
-ROUTES = parse_routes(get_env("MGNC_ROUTES"))
+INBOX_DIR = get_env("NCFD_INBOX_DIR")
+MAX_ATTACHMENT_BYTES = int(get_env("NCFD_MAX_ATTACHMENT_BYTES", 25 * 1024 * 1024))
+ROUTES = parse_routes(get_env("NCFD_ROUTES"))
 
 dictConfig(
     {

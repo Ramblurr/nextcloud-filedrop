@@ -1,7 +1,7 @@
 import os
 
-from mgnc.app import app
-from mgnc import settings
+from ncfd.app import app
+from ncfd import settings
 
 
 def main():

@@ -1,6 +1,6 @@
-MGNC_NEXTCLOUD_USER=
-MGNC_NEXTCLOUD_PASS=
-MGNC_NEXTCLOUD_WEBDAV_URL=https://yourdomain/remote.php/webdav/
-MGNC_INBOX_DIR=/inbox
-MGNC_ROUTES=filedrop@yourdomain.com:/inbox,filedrop2@yourdomain.com:/inbox-2
+NCFD_NEXTCLOUD_USER=
+NCFD_NEXTCLOUD_PASS=
+NCFD_NEXTCLOUD_WEBDAV_URL=https://yourdomain/remote.php/webdav/
+NCFD_INBOX_DIR=/inbox
+NCFD_ROUTES=filedrop@yourdomain.com:/inbox,filedrop2@yourdomain.com:/inbox-2
 DEBUG=1
