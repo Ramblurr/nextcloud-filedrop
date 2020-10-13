@@ -1,8 +1,7 @@
 from logging import getLogger
 from email.utils import parseaddr
 
-from flask import abort, request, make_response, send_file, Flask
-from werkzeug.utils import secure_filename
+from flask import request, make_response, Flask
 import dateutil.parser
 
 from ncfd.nextcloud import put_file

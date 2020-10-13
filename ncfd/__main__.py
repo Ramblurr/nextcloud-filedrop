@@ -1,5 +1,3 @@
-import os
-
 from ncfd.app import app
 from ncfd import settings
 
