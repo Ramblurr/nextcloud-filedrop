@@ -26,15 +26,15 @@ Easiest way to get going is using docker.
 4. Fill in your env vars.
 5. `docker-compose up`
 
-##  Development
+## Development
 
 This project requires Python 3, and the python deps in `requirements.txt`. Using
 a virtualenv is recommended.
 
-```
-cp env-sample .env
+```console
+$ cp env-sample .env
 # Edit .env with your values
-pip install -r requirements.dev.txt
+$ pip install -r requirements.dev.txt
 ```
 
 I recommend creating a specific nextcloud user to run this under rather than
@@ -50,12 +50,12 @@ uploaded to. This lets you run multiple filedrop emails from one instance.
 
 ### Run the thing
 
+```console
+$ python -m ncfd
 ```
-python -m ncfd
-```
 
 
-# License
+## License
 
-© 2020 Casey Link. GNU Affero General Public License v3 or later
+© 2020-present Casey Link. GNU Affero General Public License v3 or later
 
